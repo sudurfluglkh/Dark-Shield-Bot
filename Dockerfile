@@ -6,4 +6,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD ["lua","src/Dark.lua"]
+CMD ["lua5.3","src/Dark.lua"]

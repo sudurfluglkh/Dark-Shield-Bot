@@ -8,7 +8,7 @@
 
 local Config = {
     token = "8944887532:AAHYGMATmiYwFJLeV-7KqaQdsNUqsT4S6do",
-    SUDO = \8880791326,
+    SUDO = 8880791326,
     bot_id = 0,
     api_url = "",
     version = "6.1",

@@ -1,0 +1,10 @@
+# Dark Shield Bot — .gitignore
+
+.env
+*.rdb
+logs/*.log
+data/backups/*
+data/redis/*
+!**/gitkeep
+*.pid
+node_modules/

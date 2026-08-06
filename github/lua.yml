@@ -1,0 +1,32 @@
+name: Dark Shield Bot CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Lua
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.4 luarocks
+
+      - name: Install Redis
+        run: sudo apt-get install -y redis-server
+
+      - name: Install Lua modules
+        run: |
+          luarocks install lua-resty-redis
+          luarocks install dkjson
+
+      - name: Start Redis
+        run: redis-server --daemonize yes
+
+      - name: Run tests
+        run: lua tests/test.lua
